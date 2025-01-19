@@ -6,6 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { MyuseRef } from "./custom-ref";
 
 // 커스텀 useMemo
 function useCustomMemo<T>(
@@ -14,8 +15,9 @@ function useCustomMemo<T>(
   _equals = shallowEquals
 ): T {
   // 이전 의존성을 기억. 초기 설정: null
-  const preDeps = useRef<DependencyList | null>(null);
-  const preFacotry = useRef<T | null>(null);
+  // useRef 대신 커스텀 Ref 사용
+  const preDeps = MyuseRef<DependencyList | null>(null);
+  const preFacotry = MyuseRef<T | null>(null);
 
   // 이전 의존성이 없는 상태 || 이전 의존성과 현재 의존성이 다른 경우
   // = 의존성이 변한 경우
@@ -80,7 +82,7 @@ const Custom_useMemo = () => {
 
 export default Custom_useMemo;
 
-// 얕은 비교
+// 얕은 비교 구현
 function shallowEquals<T>(objA: T, objB: T): boolean {
   if (objA === objB) return true;
 
