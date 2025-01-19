@@ -84,7 +84,7 @@ const Custom_useMemo = () => {
 export default Custom_useMemo;
 
 // 얕은 비교
-function shallowEquals<T>(objA: T, objB: T): boolean {
+export function shallowEquals<T>(objA: T, objB: T): boolean {
   if (objA === objB) return true;
 
   if (Array.isArray(objA) && Array.isArray(objB)) {
