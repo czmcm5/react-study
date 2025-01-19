@@ -3,6 +3,7 @@ import Custom_ref from "./page/custom-ref";
 import Home from "./page/Home";
 import Infinite_scroll from "./page/infinite-scroll";
 import Custom_useMemo from "./page/custom-useMemo";
+import Custom_useCallback from "./page/custom-useCallback";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path="/infinite-scroll" element={<Infinite_scroll />} />
       <Route path="/custom-ref" element={<Custom_ref />} />
       <Route path="/custom-useMemo" element={<Custom_useMemo />} />
+      <Route path="/custom-useCallback" element={<Custom_useCallback />} />
     </Routes>
   );
 }

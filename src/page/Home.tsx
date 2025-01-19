@@ -17,6 +17,7 @@ const Home = () => {
   const go_infiniteScroll = () => Navigate("/infinite-scroll");
   const go_ref_test = () => Navigate("/custom-ref");
   const go_useMemo_test = () => Navigate("/custom-useMemo");
+  const go_useCallback_test = () => Navigate("/custom-useCallback");
 
   return (
     <Menu>
@@ -24,6 +25,7 @@ const Home = () => {
         <li onClick={go_infiniteScroll}>무한 스크롤</li>
         <li onClick={go_ref_test}>커스텀 ref</li>
         <li onClick={go_useMemo_test}>커스텀 useMemo</li>
+        <li onClick={go_useCallback_test}>커스텀 useCallback</li>
       </ul>
     </Menu>
   );

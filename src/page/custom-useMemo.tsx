@@ -9,11 +9,12 @@ import {
 import { MyuseRef } from "./custom-ref";
 
 // 커스텀 useMemo
-function useCustomMemo<T>(
+export function useCustomMemo<T>(
   factory: () => T,
   _deps: DependencyList,
   _equals = shallowEquals
 ): T {
+  console.log("memo, ", factory);
   // 이전 의존성을 기억. 초기 설정: null
   // useRef 대신 커스텀 Ref 사용
   const preDeps = MyuseRef<DependencyList | null>(null);
@@ -82,7 +83,7 @@ const Custom_useMemo = () => {
 
 export default Custom_useMemo;
 
-// 얕은 비교 구현
+// 얕은 비교
 function shallowEquals<T>(objA: T, objB: T): boolean {
   if (objA === objB) return true;
 
